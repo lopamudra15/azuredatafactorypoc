@@ -1,0 +1,14 @@
+{
+	"name": "wc_job_ds",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqldbadfgit",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "[dbo].[WC_JOB_DS]"
+		}
+	}
+}
