@@ -1,0 +1,98 @@
+{
+	"name": "wc_job_ds",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqldbadfgit",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ROW_WID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "INTEGRATION_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "ETL_PROC_WID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "DATASOURCE_NUM_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "W_INSERT_DT",
+				"type": "date"
+			},
+			{
+				"name": "INACTIVE",
+				"type": "varchar"
+			},
+			{
+				"name": "JOB_TITLE",
+				"type": "varchar"
+			},
+			{
+				"name": "PUBLIC_JOB",
+				"type": "varchar"
+			},
+			{
+				"name": "WORK_SHIFT_REQUIRED",
+				"type": "varchar"
+			},
+			{
+				"name": "MANAGEMENT_LEVEL",
+				"type": "varchar"
+			},
+			{
+				"name": "JOB_FAMILY",
+				"type": "varchar"
+			},
+			{
+				"name": "JOB_EXEMPT_LOCATION_CONTEXT",
+				"type": "varchar"
+			},
+			{
+				"name": "JOB_EXEMPT",
+				"type": "varchar"
+			},
+			{
+				"name": "COMPENSATION_GRADE",
+				"type": "varchar"
+			},
+			{
+				"name": "CRITICAL_JOB",
+				"type": "varchar"
+			},
+			{
+				"name": "JOB_CATEGORY",
+				"type": "varchar"
+			},
+			{
+				"name": "JOB_PROFILE_SUMMARY",
+				"type": "varchar"
+			},
+			{
+				"name": "JOB_FAMILY_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "JOB_FAMILY_SUMMARY",
+				"type": "varchar"
+			},
+			{
+				"name": "STATUS",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[WC_JOB_DS]"
+		}
+	}
+}
