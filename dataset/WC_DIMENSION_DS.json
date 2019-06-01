@@ -5,6 +5,9 @@
 			"referenceName": "Lnkd_svc_sqldb",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "AzureSQLDB"
+		},
 		"type": "AzureSqlTable",
 		"schema": [
 			{
