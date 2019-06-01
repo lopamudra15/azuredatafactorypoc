@@ -35,6 +35,14 @@
 			{
 				"name": "Execute Pipeline1",
 				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Lookup1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"typeProperties": {
 					"pipeline": {
 						"referenceName": "pipeline2",
@@ -52,7 +60,8 @@
 				"type": "String"
 			},
 			"CONFIG_TBL": {
-				"type": "String"
+				"type": "String",
+				"defaultValue": "LOAD_CFG"
 			}
 		}
 	}
