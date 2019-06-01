@@ -14,6 +14,12 @@
 			"name": "SQLDB"
 		},
 		"type": "AzureSqlTable",
-		"schema": []
+		"schema": [],
+		"typeProperties": {
+			"tableName": {
+				"value": "@dataset().TABLENAME",
+				"type": "Expression"
+			}
+		}
 	}
 }
