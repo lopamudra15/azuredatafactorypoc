@@ -22,7 +22,7 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"preCopyScript": "TRUNCATE TABLE [@{item().TARGET_TBL}]"
+						"preCopyScript": "TRUNCATE TABLE [@{TARGET_TBL}]"
 					},
 					"enableStaging": false,
 					"parallelCopies": 1,
