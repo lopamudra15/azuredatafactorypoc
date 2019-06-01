@@ -3,57 +3,6 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy Data1",
-				"type": "Copy",
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"typeProperties": {
-					"source": {
-						"type": "AzureSqlSource",
-						"sqlReaderQuery": {
-							"value": "SELECT * FROM @pipeline().parameters.SOURCE_TBL",
-							"type": "Expression"
-						}
-					},
-					"sink": {
-						"type": "AzureSqlSink",
-						"preCopyScript": "TRUNCATE TABLE [@{TARGET_TBL}]"
-					},
-					"enableStaging": false,
-					"parallelCopies": 1,
-					"enableSkipIncompatibleRow": false
-				},
-				"inputs": [
-					{
-						"referenceName": "AZURESQLDBTABLES",
-						"type": "DatasetReference",
-						"parameters": {
-							"TABLENAME": {
-								"value": "@pipeline().parameters.SOURCE_TBL",
-								"type": "Expression"
-							}
-						}
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "AZURESQLDBTABLES",
-						"type": "DatasetReference",
-						"parameters": {
-							"TABLENAME": {
-								"value": "@pipeline().parameters.TARGET_TBL",
-								"type": "Expression"
-							}
-						}
-					}
-				]
-			},
-			{
 				"name": "Execute Pipeline1",
 				"type": "ExecutePipeline",
 				"typeProperties": {
@@ -80,8 +29,18 @@
 								"secureInput": false
 							},
 							"typeProperties": {
+								"source": {
+									"type": "AzureSqlSource",
+									"sqlReaderQuery": "SELECT * FROM @pipeline().parameters.SOURCE_TBL"
+								},
 								"enableStaging": false
-							}
+							},
+							"inputs": [
+								{
+									"referenceName": "AZURESQLDBTABLES",
+									"type": "DatasetReference"
+								}
+							]
 						}
 					]
 				}
