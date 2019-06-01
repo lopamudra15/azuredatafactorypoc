@@ -62,14 +62,8 @@
 			}
 		],
 		"parameters": {
-			"SOURCE_TBL": {
-				"type": "String"
-			},
-			"TARGET_TBL": {
-				"type": "String"
-			},
-			"CONFIG_TBL": {
-				"type": "String"
+			"TABLE_LIST": {
+				"type": "array"
 			}
 		}
 	}
