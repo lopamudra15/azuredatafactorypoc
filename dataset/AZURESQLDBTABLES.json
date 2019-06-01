@@ -1,0 +1,19 @@
+{
+	"name": "AZURESQLDBTABLES",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Lnkd_svc_sqldb",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"TABLENAME": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "SQLDB"
+		},
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}
