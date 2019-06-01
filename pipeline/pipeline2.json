@@ -31,7 +31,10 @@
 							"typeProperties": {
 								"source": {
 									"type": "AzureSqlSource",
-									"sqlReaderQuery": ""
+									"sqlReaderQuery": {
+										"value": "SELECT * FROM @pipeline().parameters.TABLENAME",
+										"type": "Expression"
+									}
 								},
 								"enableStaging": false
 							},
@@ -41,7 +44,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"TABLENAME": {
-											"value": "@pipeline().parameters.TABLENAME",
+											"value": "@pipeline().parameters.TABLE_LIST",
 											"type": "Expression"
 										}
 									}
