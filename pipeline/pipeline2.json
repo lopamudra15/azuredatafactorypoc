@@ -36,9 +36,24 @@
 										"type": "Expression"
 									}
 								},
+								"sink": {
+									"type": "AzureSqlSink"
+								},
 								"enableStaging": false
 							},
 							"inputs": [
+								{
+									"referenceName": "AZURESQLDBTABLES",
+									"type": "DatasetReference",
+									"parameters": {
+										"TABLENAME": {
+											"value": "@pipeline().parameters.TABLE_LIST",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
 								{
 									"referenceName": "AZURESQLDBTABLES",
 									"type": "DatasetReference",
