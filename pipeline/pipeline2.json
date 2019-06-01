@@ -41,7 +41,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"TABLENAME": {
-											"value": "@pipeline().parameters.TABLE_LIST",
+											"value": "@pipeline().parameters.TABLENAME",
 											"type": "Expression"
 										}
 									}
