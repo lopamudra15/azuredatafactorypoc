@@ -3,13 +3,6 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Execute Pipeline1",
-				"type": "ExecutePipeline",
-				"typeProperties": {
-					"waitOnCompletion": true
-				}
-			},
-			{
 				"name": "IterateSQLTables",
 				"type": "ForEach",
 				"typeProperties": {
