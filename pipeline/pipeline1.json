@@ -16,7 +16,7 @@
 					"source": {
 						"type": "AzureSqlSource",
 						"sqlReaderQuery": {
-							"value": "SELECT SOURCE_TBL, TARGET_TBL \nFROM @pipeline().parameters.CONFIG_TBL",
+							"value": "SELECT SOURCE_TBL\nFROM @pipeline().parameters.CONFIG_TBL",
 							"type": "Expression"
 						}
 					},
