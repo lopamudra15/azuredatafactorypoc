@@ -31,7 +31,7 @@
 							"typeProperties": {
 								"source": {
 									"type": "AzureSqlSource",
-									"sqlReaderQuery": "SELECT * FROM @pipeline().parameters.SOURCE_TBL"
+									"sqlReaderQuery": ""
 								},
 								"enableStaging": false
 							},
