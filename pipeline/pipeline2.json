@@ -1,10 +1,10 @@
 {
-	"name": "pipeline1",
+	"name": "pipeline2",
 	"properties": {
 		"activities": [
 			{
-				"name": "Lookup1",
-				"type": "Lookup",
+				"name": "Copy Data1",
+				"type": "Copy",
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -16,30 +16,47 @@
 					"source": {
 						"type": "AzureSqlSource",
 						"sqlReaderQuery": {
-							"value": "SELECT SOURCE_TBL, TARGET_TBL \nFROM @pipeline().parameters.CONFIG_TBL",
+							"value": "SELECT * FROM @pipeline().parameters.SOURCE_TBL",
 							"type": "Expression"
 						}
 					},
-					"dataset": {
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE [@{TARGET_TBL}]"
+					},
+					"enableStaging": false,
+					"parallelCopies": 1,
+					"enableSkipIncompatibleRow": false
+				},
+				"inputs": [
+					{
 						"referenceName": "AZURESQLDBTABLES",
 						"type": "DatasetReference",
 						"parameters": {
 							"TABLENAME": {
-								"value": "@pipeline().parameters.CONFIG_TBL",
+								"value": "@pipeline().parameters.SOURCE_TBL",
 								"type": "Expression"
 							}
 						}
 					}
-				}
+				],
+				"outputs": [
+					{
+						"referenceName": "AZURESQLDBTABLES",
+						"type": "DatasetReference",
+						"parameters": {
+							"TABLENAME": {
+								"value": "@pipeline().parameters.TARGET_TBL",
+								"type": "Expression"
+							}
+						}
+					}
+				]
 			},
 			{
 				"name": "Execute Pipeline1",
 				"type": "ExecutePipeline",
 				"typeProperties": {
-					"pipeline": {
-						"referenceName": "pipeline2",
-						"type": "PipelineReference"
-					},
 					"waitOnCompletion": true
 				}
 			}
