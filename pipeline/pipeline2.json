@@ -62,7 +62,13 @@
 			},
 			{
 				"name": "IterateSQLTables",
-				"type": "ForEach"
+				"type": "ForEach",
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.TABLE_LIST",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"parameters": {
