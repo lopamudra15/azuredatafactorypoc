@@ -63,6 +63,12 @@
 			"CONFIG_TBL": {
 				"type": "String",
 				"defaultValue": "LOAD_CFG"
+			},
+			"SRC_TBL": {
+				"type": "string"
+			},
+			"TGT_TBL": {
+				"type": "string"
 			}
 		}
 	}
