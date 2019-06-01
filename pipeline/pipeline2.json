@@ -30,7 +30,19 @@
 									}
 								},
 								"sink": {
-									"type": "AzureSqlSink"
+									"type": "DelimitedTextSink",
+									"storeSettings": {
+										"type": "AzureBlobStorageWriteSetting",
+										"copyBehavior": {
+											"value": "@pipeline().parameters.TABLENAME",
+											"type": "Expression"
+										}
+									},
+									"formatSettings": {
+										"type": "DelimitedTextWriteSetting",
+										"quoteAllText": true,
+										"fileExtension": ".txt"
+									}
 								},
 								"enableStaging": false
 							},
@@ -48,14 +60,8 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "AZURESQLDBTABLES",
-									"type": "DatasetReference",
-									"parameters": {
-										"TABLENAME": {
-											"value": "@pipeline().parameters.TABLE_LIST",
-											"type": "Expression"
-										}
-									}
+									"referenceName": "BLOBFILES",
+									"type": "DatasetReference"
 								}
 							]
 						}
