@@ -55,6 +55,9 @@
 		"parameters": {
 			"TABLE_LIST": {
 				"type": "array"
+			},
+			"TABLENAME": {
+				"type": "string"
 			}
 		}
 	}
