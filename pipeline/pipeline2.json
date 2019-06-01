@@ -59,6 +59,10 @@
 				"typeProperties": {
 					"waitOnCompletion": true
 				}
+			},
+			{
+				"name": "IterateSQLTables",
+				"type": "ForEach"
 			}
 		],
 		"parameters": {
