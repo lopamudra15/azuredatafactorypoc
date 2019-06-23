@@ -7,7 +7,7 @@
 				"type": "ForEach",
 				"typeProperties": {
 					"items": {
-						"value": "",
+						"value": "@pipeline().parameters.TABLENAME",
 						"type": "Expression"
 					},
 					"isSequential": true,
