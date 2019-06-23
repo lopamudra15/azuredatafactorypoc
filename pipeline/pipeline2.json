@@ -24,17 +24,14 @@
 							"typeProperties": {
 								"source": {
 									"type": "AzureSqlSource",
-									"sqlReaderQuery": {
-										"value": "SELECT * FROM @pipeline().parameters.TABLENAME",
-										"type": "Expression"
-									}
+									"sqlReaderQuery": "SELECT SOURCE_TBL FROM LOAD_CFG"
 								},
 								"sink": {
 									"type": "DelimitedTextSink",
 									"storeSettings": {
 										"type": "AzureBlobStorageWriteSetting",
 										"copyBehavior": {
-											"value": "@pipeline().parameters.TABLENAME",
+											"value": "SELECT TARGET_TBL FROM LOAD_CFG",
 											"type": "Expression"
 										}
 									},
@@ -52,7 +49,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"TABLENAME": {
-											"value": "@pipeline().parameters.TABLE_LIST",
+											"value": "LOAD_CFG",
 											"type": "Expression"
 										}
 									}
