@@ -7,7 +7,7 @@
 				"type": "ForEach",
 				"typeProperties": {
 					"items": {
-						"value": "@pipeline().parameters.TABLENAME",
+						"value": "@activity('Copy Data2').output",
 						"type": "Expression"
 					},
 					"isSequential": true,
