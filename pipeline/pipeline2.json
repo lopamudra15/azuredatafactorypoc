@@ -1,0 +1,78 @@
+{
+	"name": "pipeline2",
+	"properties": {
+		"activities": [
+			{
+				"name": "IterateSQLTables",
+				"type": "ForEach",
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.TABLE_LIST",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Copy Data2",
+							"type": "Copy",
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"typeProperties": {
+								"source": {
+									"type": "AzureSqlSource",
+									"sqlReaderQuery": "SELECT SOURCE_TBL FROM LOAD_CFG"
+								},
+								"sink": {
+									"type": "DelimitedTextSink",
+									"storeSettings": {
+										"type": "AzureBlobStorageWriteSetting",
+										"copyBehavior": {
+											"value": "SELECT TARGET_TBL FROM LOAD_CFG",
+											"type": "Expression"
+										}
+									},
+									"formatSettings": {
+										"type": "DelimitedTextWriteSetting",
+										"quoteAllText": true,
+										"fileExtension": ".txt"
+									}
+								},
+								"enableStaging": false
+							},
+							"inputs": [
+								{
+									"referenceName": "AZURESQLDBTABLES",
+									"type": "DatasetReference",
+									"parameters": {
+										"TABLENAME": {
+											"value": "LOAD_CFG",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "BLOBFILES",
+									"type": "DatasetReference"
+								}
+							]
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"TABLE_LIST": {
+				"type": "array"
+			},
+			"TABLENAME": {
+				"type": "string"
+			}
+		}
+	}
+}

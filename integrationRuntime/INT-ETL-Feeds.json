@@ -1,0 +1,6 @@
+{
+	"name": "INT-ETL-Feeds",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
