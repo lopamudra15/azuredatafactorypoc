@@ -83,6 +83,9 @@
 			},
 			"TABLENAME": {
 				"type": "string"
+			},
+			"lkp": {
+				"type": "String"
 			}
 		}
 	}

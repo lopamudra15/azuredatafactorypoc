@@ -14,7 +14,8 @@
 				},
 				"typeProperties": {
 					"source": {
-						"type": "AzureSqlSource"
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "select source_tbl from load_cfg"
 					},
 					"dataset": {
 						"referenceName": "AZURESQLDBTABLES",
