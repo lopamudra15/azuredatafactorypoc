@@ -108,9 +108,10 @@
 						"userProperties": [],
 						"typeProperties": {
 							"items": {
-								"value": "@pipeline().parameters.TABLE_LIST",
+								"value": "@pipeline().parameters.TABLENAME",
 								"type": "Expression"
 							},
+							"isSequential": true,
 							"activities": [
 								{
 									"name": "Copy Data2",
@@ -144,7 +145,18 @@
 												"fileExtension": ".txt"
 											}
 										},
-										"enableStaging": false
+										"enableStaging": false,
+										"translator": {
+											"type": "TabularTranslator",
+											"mappings": [
+												{
+													"source": {},
+													"sink": {
+														"ordinal": 1
+													}
+												}
+											]
+										}
 									},
 									"inputs": [
 										{
@@ -172,7 +184,7 @@
 				],
 				"parameters": {
 					"TABLE_LIST": {
-						"type": "array"
+						"type": "string"
 					},
 					"TABLENAME": {
 						"type": "string"
