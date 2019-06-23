@@ -14,11 +14,7 @@
 				},
 				"typeProperties": {
 					"source": {
-						"type": "AzureSqlSource",
-						"sqlReaderQuery": {
-							"value": "SELECT SOURCE_TBL\nFROM @pipeline().parameters.CONFIG_TBL",
-							"type": "Expression"
-						}
+						"type": "AzureSqlSource"
 					},
 					"dataset": {
 						"referenceName": "AZURESQLDBTABLES",
