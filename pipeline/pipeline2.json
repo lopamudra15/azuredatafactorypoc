@@ -5,6 +5,8 @@
 			{
 				"name": "IterateSQLTables",
 				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
 				"typeProperties": {
 					"items": {
 						"value": "@pipeline().parameters.TABLE_LIST",
@@ -14,6 +16,7 @@
 						{
 							"name": "Copy Data2",
 							"type": "Copy",
+							"dependsOn": [],
 							"policy": {
 								"timeout": "7.00:00:00",
 								"retry": 0,
@@ -21,10 +24,10 @@
 								"secureOutput": false,
 								"secureInput": false
 							},
+							"userProperties": [],
 							"typeProperties": {
 								"source": {
-									"type": "AzureSqlSource",
-									"sqlReaderQuery": "SELECT SOURCE_TBL FROM LOAD_CFG"
+									"type": "AzureSqlSource"
 								},
 								"sink": {
 									"type": "DelimitedTextSink",
@@ -73,6 +76,7 @@
 			"TABLENAME": {
 				"type": "string"
 			}
-		}
+		},
+		"annotations": []
 	}
 }

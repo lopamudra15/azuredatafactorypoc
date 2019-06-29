@@ -5,6 +5,12 @@
 			"referenceName": "AzureBlobBAWETL",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"TABLENAME": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
