@@ -52,7 +52,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"TABLENAME": {
-											"value": "LOAD_CFG",
+											"value": "@pipeline().parameters.TABLENAME",
 											"type": "Expression"
 										}
 									}
