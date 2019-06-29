@@ -61,7 +61,13 @@
 							"outputs": [
 								{
 									"referenceName": "BLOBFILES",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"TABLENAME": {
+											"value": "@pipeline().parameters.TABLENAME",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
