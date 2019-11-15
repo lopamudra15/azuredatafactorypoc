@@ -1,0 +1,16 @@
+{
+	"name": "bidatapv",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "Oracle",
+		"typeProperties": {
+			"connectionString": "host=ewhpvq-scan.gartner.com;port=1521;servicename=bidatapv_obiee_etl_svc.gartner.com;user id=xxgobiusr",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI0MWM4OTM5Ni1iOWU4LTQ3OTMtOWYzNS0zM2MxMDQ0M2Q2YzMiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "IRSnowflake",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
