@@ -9,7 +9,7 @@
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Basic",
 			"userName": "lkanungo",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI3ZGIwNzlkMC1lYmY3LTQ2NDEtOTUzNy0wYzk2MDNmMDQ2MmYiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI2MzJkMjk0NS1kMjk0LTRmOWMtOWY1YS02MmNjZGM0NzE2NzkiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "IRSnowflake",
